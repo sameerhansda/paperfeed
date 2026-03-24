@@ -35,17 +35,18 @@ jobs:
       - name: Install dependencies
         run: pip install gh-store
 
+      - name: Patch gh_store datetime timezone bug
+        run: |
+          COMMANDS_PY=$(python -c "import gh_store.cli.commands as m; print(m.__file__)")
+          STORE_PY=$(python -c "import gh_store.core.store as m; print(m.__file__)")
+          sed -i 's/datetime(2020, 1, 1)/datetime(2020, 1, 1, tzinfo=timezone.utc)/' "$COMMANDS_PY"
+          sed -i 's/if obj\.meta\.updated_at > timestamp:/if obj.meta.updated_at > (timestamp if timestamp.tzinfo else timestamp.replace(tzinfo=timezone.utc)):/' "$STORE_PY"
+
       - name: Update snapshot
         env:
           SNAPSHOT_PATH: data/papers/gh-store-snapshot.json
         run: |
           mkdir -p $(dirname ${{ env.SNAPSHOT_PATH }})
-          
-          # SAFETY CHECK: If the file is missing or empty, create a valid UTC starting point
-          if [ ! -s "${{ env.SNAPSHOT_PATH }}" ]; then
-            echo '{"snapshot_time": "2020-01-01T00:00:00+00:00", "items": []}' > ${{ env.SNAPSHOT_PATH }}
-          fi
-          
           python -m gh_store update-snapshot \
             --token ${{ secrets.GITHUB_TOKEN }} \
             --repo ${{ github.repository }} \
@@ -66,7 +67,6 @@ jobs:
       
   deploy:
     needs: update-snapshot
-    # Runs if manually triggered OR if the snapshot actually changed
     if: github.event_name == 'workflow_dispatch' || needs.update-snapshot.outputs.changes_detected == 'true'
     environment:
       name: github-pages
@@ -85,16 +85,14 @@ jobs:
 
       - name: Build web directory
         run: |
-          mkdir -p web/data/papers
-          # Copy frontend assets
-          if [ -d "frontend" ]; then cp -r frontend/* web/; fi
+          cp frontend/* web/
           
-          # Copy paper features maintaining structure
-          if [ -d "data/papers" ]; then
-            cd data
+          cd data
+          if [ -d "papers" ]; then
+            mkdir -p ../web/data/papers
             find papers -type f -name "*.md" -path "*/features/*" -exec cp --parents {} ../web/data/ \;
-            cd ..
           fi
+          cd ..
 
       - name: Get git info
         id: git-info
@@ -112,5 +110,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./web
-          publish_branch: gh-pages
           force_orphan: true
