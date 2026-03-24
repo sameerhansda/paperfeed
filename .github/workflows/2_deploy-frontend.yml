@@ -33,7 +33,9 @@ jobs:
           cache: 'pip'
           
       - name: Install dependencies
-        run: pip install gh-store
+        run: |
+          pip install gh-store
+          python -c "import gh_store; print(gh_store.__version__)"
 
       - name: Patch gh_store datetime timezone bug
         run: |
