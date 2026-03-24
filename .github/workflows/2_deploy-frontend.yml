@@ -39,9 +39,14 @@ jobs:
         run: |
           COMMANDS_PY=$(python -c "import gh_store.cli.commands as m; print(m.__file__)")
           STORE_PY=$(python -c "import gh_store.core.store as m; print(m.__file__)")
+          
+          # Fix 1: naive datetime comparison
           sed -i 's/datetime(2020, 1, 1)/datetime(2020, 1, 1, tzinfo=timezone.utc)/' "$COMMANDS_PY"
           sed -i 's/if obj\.meta\.updated_at > timestamp:/if obj.meta.updated_at > (timestamp if timestamp.tzinfo else timestamp.replace(tzinfo=timezone.utc)):/' "$STORE_PY"
-
+          
+          # Fix 2: snapshot schema mismatch
+          sed -i 's/snapshot_data\["objects"\]/snapshot_data["items"]/' "$COMMANDS_PY"
+          
       - name: Update snapshot
         env:
           SNAPSHOT_PATH: data/papers/gh-store-snapshot.json
