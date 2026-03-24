@@ -26,6 +26,9 @@ jobs:
       changes_detected: ${{ steps.commit-changes.outputs.changes_detected }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # This ensures we have the full history to handle the merge
+          fetch-depth: 0
       
       - uses: actions/setup-python@v5
         with:
