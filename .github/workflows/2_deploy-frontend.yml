@@ -42,13 +42,36 @@ jobs:
           COMMANDS_PY=$(python -c "import gh_store.cli.commands as m; print(m.__file__)")
           STORE_PY=$(python -c "import gh_store.core.store as m; print(m.__file__)")
           
-          # Fix 1: naive datetime comparison
+          # Verify files found
+          echo "Patching: $COMMANDS_PY"
+          echo "Patching: $STORE_PY"
+
+          # Fix 1: naive datetime comparison (sed)
           sed -i 's/datetime(2020, 1, 1)/datetime(2020, 1, 1, tzinfo=timezone.utc)/' "$COMMANDS_PY"
           sed -i 's/if obj\.meta\.updated_at > timestamp:/if obj.meta.updated_at > (timestamp if timestamp.tzinfo else timestamp.replace(tzinfo=timezone.utc)):/' "$STORE_PY"
           
-          # Fix 2: snapshot schema mismatch
-          sed -i 's/snapshot_data\["objects"\]/snapshot_data["items"]/' "$COMMANDS_PY"
+          # Fix 2: snapshot schema mismatch (Python replace - more reliable than sed for this)
+          python - <<EOF
+          import re
           
+          with open("$COMMANDS_PY", "r") as f:
+              content = f.read()
+          
+          # Replace snapshot_data["objects"] with snapshot_data["items"]
+          patched = content.replace('snapshot_data["objects"]', 'snapshot_data["items"]')
+          
+          # Also handle single-quote variant just in case
+          patched = patched.replace("snapshot_data['objects']", "snapshot_data['items']")
+          
+          with open("$COMMANDS_PY", "w") as f:
+              f.write(patched)
+          
+          print("Fix 2 applied. Occurrences replaced:", content.count('snapshot_data["objects"]') + content.count("snapshot_data['objects']"))
+          EOF
+
+          # Confirm patch applied
+          echo "--- Verifying patches ---"
+          grep -n "objects\|items\|datetime(2020" "$COMMANDS_PY" || true
       - name: Update snapshot
         env:
           SNAPSHOT_PATH: data/papers/gh-store-snapshot.json
