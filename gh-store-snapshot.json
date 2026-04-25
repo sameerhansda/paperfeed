@@ -1,0 +1,271 @@
+{
+  "snapshot_time": "2026-04-25T09:46:02.589713+00:00",
+  "objects": {
+    "interactions:arxiv.2603.18387": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "2603.18387",
+        "interactions": [
+          {
+            "type": "reading_session",
+            "timestamp": "2026-03-24T11:01:51.213Z",
+            "data": {
+              "session_id": "session_1774350111195_vskcoup",
+              "source_id": "arxiv",
+              "paper_id": "2603.18387",
+              "start_time": "2026-03-24T11:01:24.347Z",
+              "end_time": "2026-03-24T11:01:51.195Z",
+              "heartbeat_count": 5,
+              "duration_seconds": 25,
+              "idle_seconds": 2,
+              "total_elapsed_seconds": 27
+            }
+          },
+          {
+            "type": "reading_session",
+            "timestamp": "2026-03-24T11:10:28.213Z",
+            "data": {
+              "session_id": "session_1774350628206_ntfnps4",
+              "source_id": "arxiv",
+              "paper_id": "2603.18387",
+              "start_time": "2026-03-24T11:10:18.859Z",
+              "end_time": "2026-03-24T11:10:28.206Z",
+              "heartbeat_count": 1,
+              "duration_seconds": 5,
+              "idle_seconds": 4,
+              "total_elapsed_seconds": 9
+            }
+          },
+          {
+            "type": "rating",
+            "timestamp": "2026-03-24T11:14:04.535Z",
+            "data": {
+              "rating": "thumbsup"
+            }
+          },
+          {
+            "type": "reading_session",
+            "timestamp": "2026-03-24T15:32:58.965Z",
+            "data": {
+              "session_id": "session_1774366378535_7p1h14w",
+              "source_id": "arxiv",
+              "paper_id": "2603.18387",
+              "start_time": "2026-03-24T15:32:52.591Z",
+              "end_time": "2026-03-24T15:32:58.535Z",
+              "heartbeat_count": 1,
+              "duration_seconds": 5,
+              "idle_seconds": 1,
+              "total_elapsed_seconds": 6
+            }
+          },
+          {
+            "type": "reading_session",
+            "timestamp": "2026-03-24T15:39:55.601Z",
+            "data": {
+              "session_id": "session_1774366795046_znalxvu",
+              "source_id": "arxiv",
+              "paper_id": "2603.18387",
+              "start_time": "2026-03-24T15:39:33.028Z",
+              "end_time": "2026-03-24T15:39:55.046Z",
+              "heartbeat_count": 4,
+              "duration_seconds": 20,
+              "idle_seconds": 2,
+              "total_elapsed_seconds": 22
+            }
+          },
+          {
+            "type": "reading_session",
+            "timestamp": "2026-03-24T16:14:11.928Z",
+            "data": {
+              "session_id": "session_1774368851920_jzg9738",
+              "source_id": "arxiv",
+              "paper_id": "2603.18387",
+              "start_time": "2026-03-24T16:14:01.696Z",
+              "end_time": "2026-03-24T16:14:11.920Z",
+              "heartbeat_count": 2,
+              "duration_seconds": 10,
+              "idle_seconds": 0,
+              "total_elapsed_seconds": 10
+            }
+          }
+        ]
+      },
+      "meta": {
+        "issue_number": 2,
+        "object_id": "interactions:arxiv.2603.18387",
+        "created_at": "2026-03-24T11:01:53+00:00",
+        "updated_at": "2026-03-24T16:14:37+00:00",
+        "version": 1
+      }
+    },
+    "paper:arxiv.2603.18387": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "2603.18387",
+        "url": "https://arxiv.org/abs/2603.18387",
+        "title": "Mathematical Foundations of Deep Learning",
+        "authors": "Xiaojing Ye",
+        "abstract": "This draft book offers a comprehensive and rigorous treatment of the mathematical principles underlying modern deep learning. The book spans core theoretical topics, from the approximation capabilities of deep neural networks, the theory and algorithms of optimal control and reinforcement learning integrated with deep learning techniques, to contemporary generative models that drive today's advances in artificial intelligence.",
+        "timestamp": "2026-03-24T11:01:14.957Z",
+        "rating": "thumbsup",
+        "publishedDate": "2026/03/19",
+        "tags": [
+          "Machine Learning (cs.LG)",
+          "Optimization and Control (math.OC)"
+        ],
+        "doi": "",
+        "journalName": "",
+        "sourceType": "url"
+      },
+      "meta": {
+        "issue_number": 1,
+        "object_id": "paper:arxiv.2603.18387",
+        "created_at": "2026-03-24T11:01:15+00:00",
+        "updated_at": "2026-03-24T11:14:12+00:00",
+        "version": 1
+      }
+    },
+    "interactions:url.74C1543D": {
+      "data": {
+        "sourceId": "url",
+        "paperId": "74C1543D",
+        "interactions": [
+          {
+            "type": "rating",
+            "timestamp": "2026-03-25T09:41:43.356Z",
+            "data": {
+              "rating": "thumbsup"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "issue_number": 6,
+        "object_id": "interactions:url.74C1543D",
+        "created_at": "2026-03-25T09:41:39+00:00",
+        "updated_at": "2026-03-25T09:42:04+00:00",
+        "version": 1
+      }
+    },
+    "paper:url.74C1543D": {
+      "data": {
+        "sourceId": "url",
+        "paperId": "74C1543D",
+        "url": "https://jcsphysics.net/lit/gabor1946.pdf",
+        "title": "74C1543D",
+        "authors": "",
+        "abstract": "",
+        "timestamp": "2026-03-25T09:41:33.019Z",
+        "rating": "novote",
+        "publishedDate": "",
+        "tags": [],
+        "doi": "",
+        "journalName": "",
+        "sourceType": "pdf"
+      },
+      "meta": {
+        "issue_number": 4,
+        "object_id": "paper:url.74C1543D",
+        "created_at": "2026-03-25T09:41:34+00:00",
+        "updated_at": "2026-03-25T09:41:57+00:00",
+        "version": 1
+      }
+    },
+    "paper:arxiv.1706.03762": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "1706.03762",
+        "url": "https://arxiv.org/abs/1706.03762",
+        "title": "Attention Is All You Need",
+        "authors": "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin",
+        "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.",
+        "timestamp": "2026-04-25T09:30:04.515Z",
+        "rating": "novote",
+        "publishedDate": "2017/06/12",
+        "tags": [
+          "Computation and Language (cs.CL)",
+          "Machine Learning (cs.LG)"
+        ],
+        "doi": "",
+        "journalName": "",
+        "sourceType": "url"
+      },
+      "meta": {
+        "issue_number": 7,
+        "object_id": "paper:arxiv.1706.03762",
+        "created_at": "2026-04-25T09:30:05+00:00",
+        "updated_at": "2026-04-25T09:30:25+00:00",
+        "version": 1
+      }
+    },
+    "paper:arxiv.2006.11239": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "2006.11239",
+        "url": "https://arxiv.org/abs/2006.11239",
+        "title": "Denoising Diffusion Probabilistic Models",
+        "authors": "Jonathan Ho, Ajay Jain, Pieter Abbeel",
+        "abstract": "We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and a state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality similar to ProgressiveGAN. Our implementation is available at this https URL",
+        "timestamp": "2026-04-25T09:31:09.764Z",
+        "rating": "novote",
+        "publishedDate": "2020/06/19",
+        "tags": [
+          "Machine Learning (cs.LG)",
+          "Machine Learning (stat.ML)"
+        ],
+        "doi": "",
+        "journalName": "",
+        "sourceType": "url"
+      },
+      "meta": {
+        "issue_number": 9,
+        "object_id": "paper:arxiv.2006.11239",
+        "created_at": "2026-04-25T09:31:10+00:00",
+        "updated_at": "2026-04-25T09:31:26+00:00",
+        "version": 1
+      }
+    },
+    "paper:arxiv.2510.21890": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "2510.21890",
+        "url": "https://arxiv.org/abs/2510.21890",
+        "title": "The Principles of Diffusion Models",
+        "authors": "Chieh-Hsin Lai, Yang Song, Dongjun Kim, Yuki Mitsufuji, Stefano Ermon",
+        "abstract": "This monograph presents the core principles that have guided the development of diffusion models, tracing their origins and showing how diverse formulations arise from shared mathematical ideas. Diffusion modeling starts by defining a forward process that gradually corrupts data into noise, linking the data distribution to a simple prior through a continuum of intermediate distributions. The goal is to learn a reverse process that transforms noise back into data while recovering the same intermediates. We describe three complementary views. The variational view, inspired by variational autoencoders, sees diffusion as learning to remove noise step by step. The score-based view, rooted in energy-based modeling, learns the gradient of the evolving data distribution, indicating how to nudge samples toward more likely regions. The flow-based view, related to normalizing flows, treats generation as following a smooth path that moves samples from noise to data under a learned velocity field. These perspectives share a common backbone: a time-dependent velocity field whose flow transports a simple prior to the data. Sampling then amounts to solving a differential equation that evolves noise into data along a continuous trajectory. On this foundation, the monograph discusses guidance for controllable generation, efficient numerical solvers, and diffusion-motivated flow-map models that learn direct mappings between arbitrary times. It provides a conceptual and mathematically grounded understanding of diffusion models for readers with basic deep-learning knowledge.",
+        "timestamp": "2026-04-25T09:31:05.980Z",
+        "rating": "novote",
+        "publishedDate": "2025/10/24",
+        "tags": [
+          "Machine Learning (cs.LG)",
+          "Artificial Intelligence (cs.AI)",
+          "Graphics (cs.GR)"
+        ],
+        "doi": "",
+        "journalName": "",
+        "sourceType": "url"
+      },
+      "meta": {
+        "issue_number": 8,
+        "object_id": "paper:arxiv.2510.21890",
+        "created_at": "2026-04-25T09:31:06+00:00",
+        "updated_at": "2026-04-25T09:31:21+00:00",
+        "version": 1
+      }
+    },
+    "interactions:arxiv.1706.03762": {
+      "data": {
+        "sourceId": "arxiv",
+        "paperId": "1706.03762",
+        "interactions": []
+      },
+      "meta": {
+        "issue_number": 10,
+        "object_id": "interactions:arxiv.1706.03762",
+        "created_at": "2026-04-25T09:32:17+00:00",
+        "updated_at": "2026-04-25T09:32:19+00:00",
+        "version": 1
+      }
+    }
+  }
+}
