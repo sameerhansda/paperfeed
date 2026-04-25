@@ -67,6 +67,8 @@ jobs:
         with:
           commit_message: "chore: Update store snapshot [${{ github.run_id }}]"
           file_pattern: 'data/papers/**'
+          # Add this line to bypass the non-fast-forward error
+          push_options: '--force
       
   deploy:
     needs: update-snapshot
